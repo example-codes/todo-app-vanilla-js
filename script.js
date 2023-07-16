@@ -1,6 +1,6 @@
 const FLIPPER_FLAGS = {
-  reRenderVersion: 1,
-  // reRenderVersion: 2,
+  reRenderListVersion: 1,
+  // reRenderListVersion: 2,
 
   mockData: false, // alternate is false
 };
@@ -45,7 +45,7 @@ function reRenderList(listData, listNode) {
     const newItem = document.createElement("li");
     const todoText = document.createElement("span");
     const deleteButton = document.createElement("button");
-    // deleteButton.setAttribute("class", "done-button");
+    deleteButton.setAttribute("class", "done-button");
     // Add deletion code
 
     todoText.textContent = listData[i];
@@ -112,6 +112,6 @@ addButton.addEventListener("click", () => {
   }
   todos.push(input.value);
 
-  reRenderList([input.value], todosListNode);
-  //   input.value = "";
+  appendToTodoList(input.value, todosListNode);
+  input.value = ""; // clear text box after 'add'
 });
