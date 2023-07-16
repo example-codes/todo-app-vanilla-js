@@ -4,7 +4,6 @@ const FLIPPER_FLAGS = {
 
   mockData: false, // alternate is false
 };
-const todos = ["Wake up", "Wash up", "Have Breadkfast"];
 if (FLIPPER_FLAGS.mockData) {
   const mockElement = "Wake up";
   for (let i = 0; i < 100; i++) {
@@ -12,6 +11,8 @@ if (FLIPPER_FLAGS.mockData) {
   }
 }
 
+// app code STARTS here
+const todos = ["Wake up", "Wash up", "Have Breadkfast"];
 const todosListNode = document.querySelector("#todos-list");
 
 /*
@@ -92,8 +93,11 @@ function appendToTodoList(newTodoText, listNode) {
   const endTime = Date.now();
   console.log("appendToTodoList", (endTime - startTime) / 1000);
 }
+
+// first render (list UI from array)
 reRenderList(todos, todosListNode);
 
+// add button
 const addButton = document.querySelector("button#add-button");
 addButton.addEventListener("click", () => {
   const input = document.querySelector("input");
