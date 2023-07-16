@@ -1,7 +1,15 @@
-const mockElement = "Wake up";
+const FLIPPER_FLAGS = {
+  reRenderVersion: 1,
+  // reRenderVersion: 2,
+
+  mockData: false, // alternate is false
+};
 const todos = ["Wake up", "Wash up", "Have Breadkfast"];
-for (let i = 0; i < 100; i++) {
-  todos.push(mockElement);
+if (FLIPPER_FLAGS.mockData) {
+  const mockElement = "Wake up";
+  for (let i = 0; i < 100; i++) {
+    todos.push(mockElement);
+  }
 }
 
 const todosListNode = document.querySelector("#todos-list");
@@ -12,12 +20,10 @@ const todosListNode = document.querySelector("#todos-list");
  listData = array of strings
  listNode = container (could be ul)
  */
-// const reRenderListVersion = 1;
-const reRenderListVersion = 2;
 function reRenderList(listData, listNode) {
   const startTime = Date.now();
 
-  if (reRenderListVersion === 2) {
+  if (FLIPPER_FLAGS.reRenderListVersion === 2) {
     for (let i = 0; i < listData.length; i++) {
       appendToTodoList(listData[i], listNode);
     }
