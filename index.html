@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .done-button {
+            margin-left: 5px;
+        }
+
+        #add-button-error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo items</h1>
+    <ol id="todos-list">
+        <!-- <li>Wake up</li>
+        <li><span>Wake up</span> <button>Done</button></li> -->
+    </ol>
+    <label>Enter task text</label>
+    <input type="text">
+    <div style="display: flex; gap:10px; align-items: center;">
+        <button id="add-button">Add</button>
+        <p id="add-button-error" hidden>Cannot add empty task</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
